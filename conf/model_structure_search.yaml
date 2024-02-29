@@ -1,0 +1,27 @@
+default:
+  - model: priorVAE
+  #- datasets: Gene_level_no_normalization
+
+model:
+  #num_layers: 2
+  #encoder_config: 
+  #- 1000
+  #- 100
+  latent_dim: 50
+  n_features_path: 50
+
+#gene_set_definition: Hallmark_transcript_level_no_normalization
+gene_set_definition:
+  mu: '/mnt/dzl_bioinf/binliu/deepRNA/data_all_samples/prior_distribution/bootstrap_mean_MsigDB_gene_level.csv'
+  sigma: '/mnt/dzl_bioinf/binliu/deepRNA/data_all_samples/prior_distribution/bootstrap_sigma_MsigDB_gene_level.csv'
+
+#training:
+  #learning_rate: 0.0001
+  #epochs: 50
+  #batch_size: 128
+  #beta: 1
+
+#datasets: Transcript_level_no_normalization
+datasets:
+  train_set: '/mnt/dzl_bioinf/binliu/deepRNA/data_all_samples/gene_level_train_test/all_samples_gene_level_train.pkl'
+  test_set: '/mnt/dzl_bioinf/binliu/deepRNA/data_all_samples/gene_level_train_test/all_samples_gene_level_test.pkl'
